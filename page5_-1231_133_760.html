@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME CLEAR - 脱出成功！</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: #eee;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #2c2c2c;
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(46, 204, 113, 0.3); /* 成功を祝う緑の輝き */
+            border: 2px solid #2ecc71;
+            position: relative;
+        }
+        .clear-badge {
+            font-size: 5em;
+            margin: 0;
+            color: #2ecc71;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        h2 {
+            font-size: 2.2em;
+            color: #f1c40f; /* ゴールド */
+            margin-top: 10px;
+            letter-spacing: 0.2em;
+        }
+        .message {
+            font-size: 1.2em;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        .dm-request {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .btn-home {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background-color: #2ecc71;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .btn-home:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="clear-badge">★</p>
+        <h2>CONGRATULATIONS!</h2>
+        <h1>クリア成功</h1>
+
+        <div class="message">
+            <p>見事、クリアに成功しました！</p>
+            <p>最後のurlに気づいたあなたの洞察力に敬意を表します。</p>
+            <p>最後まで遊んでくれて、本当にありがとうございました！</p>
+        </div>
+
+        <div class="dm-request">
+            <p>もしよろしければ、クリアした感想や解けた時の気持ちをDMで送っていただけると非常に嬉しいです！</p>
+            <p>皆さんの反応が、次なる謎解きの活力になります。</p>
+        </div>
+    </div>
+</body>
+</html>
