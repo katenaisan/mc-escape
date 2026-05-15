@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謎解き - 第4問</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .image-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            flex: 1;
+            min-width: 300px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #1a252f;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        input:disabled {
+            background-color: #eee;
+        }
+        #error-msg {
+            color: #e74c3c;
+            margin-top: 15px;
+            font-weight: bold;
+            white-space: pre-wrap; /* 改行を有効にする */
+        }
+        .warning {
+            color: #d35400;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>第4の謎</h2>
+        <p class="warning">※注意：この問題は解答チャンスは一度きりです。</p>
+        <p><p>新たな画像と今いる場所の情報を照らし合わせ、答えを導き出せ。</p></p>
+        <p>回答の際は次に向かう鯖の番号のみを入力してください。</p>
+
+
+        <img src="image6.png" alt="謎4の画像1">
+        <img src="image7.png" alt="謎4の画像2">
+
+
+        <div id="input-area">
+            <input type="text" id="answer" placeholder="答えを入力">
+            <br>
+            <button id="submit-btn" onclick="checkAnswer()">解答を送信</button>
+            <div id="error-msg"></div>
+        </div>
+    </div>
+
+    <script>
+        // ページ読み込み時にロック状態を確認
+        window.onload = function() {
+            if (localStorage.getItem("isLocked_q4") === "true") {
+                lockSystem("以前の解答に失敗したため、システムがロックされています。");
+            }
+        };
+
+        function checkAnswer() {
+            let inputField = document.getElementById("answer");
+            let submitBtn = document.getElementById("submit-btn");
+            let errorMsg = document.getElementById("error-msg");
+            let input = inputField.value.trim();
+
+            if (!input) return;
+
+            // ★正解のキーワードを設定★
+            const correctAnswer = "5";
+
+            if (input === correctAnswer) {
+                // 正解ならロックを解除して次へ
+                localStorage.removeItem("isLocked_q4");
+                window.location.href = "page5_x_y_z.html";
+            } else {
+                // 不正解なら即座にロック
+                localStorage.setItem("isLocked_q4", "true");
+                lockSystem("認証失敗。\n解答権限が剥奪されました。\nクリア失敗です。お疲れさまでした!");
+            }
+        }
+
+        function lockSystem(message) {
+            document.getElementById("answer").disabled = true;
+            document.getElementById("submit-btn").disabled = true;
+            let errorMsg = document.getElementById("error-msg");
+            errorMsg.innerText = message;
+        }
+    </script>
+</body>
+</html>

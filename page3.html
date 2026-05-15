@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>謎解き - 第2問</title>
+    <title>謎解き - 第3問</title>
     <style>
         body {
             font-family: sans-serif;
@@ -58,11 +58,10 @@
 </head>
 <body>
     <div class="container">
-        <h2>第2の謎</h2>
+        <h2>第3の謎</h2>
         <p>新たな画像と今いる場所の情報を照らし合わせ、答えを導き出せ。</p>
 
-        <img src="image3.png" alt="謎2の画像1">
-        <img src="image4.png" alt="謎2の画像2">
+        <img src="image5.png" alt="謎3の画像">
 
         <div>
             <input type="text" id="answer" placeholder="答えを入力">
@@ -78,12 +77,12 @@
             let input = document.getElementById("answer").value.trim();
             let errorMsg = document.getElementById("error-msg");
 
-            // ★ココを書き換える：第2問の正解キーワードを設定してください★
-            const correctAnswer = "シゲンサバニイケ";
+            // ★ココを書き換える：第3問の正解キーワードを設定してください★
+            const correctAnswer = "空ワールド";
 
             if (input === correctAnswer) {
-                // 正解の場合、page3.html へ遷移する
-                window.location.href = "page3.html";
+                // 正解の場合、page4.html（またはクリアページ）へ遷移する
+                window.location.href = "page4.html";
             } else {
                 // 不正解の場合
                 errorMsg.innerText = "答えが違います。もう一度考えてみましょう。";
