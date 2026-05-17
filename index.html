@@ -3,95 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>謎解き - 第1問</title>
+    <title>謎解きへの招待状</title>
     <style>
         body {
-            font-family: sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f4f4f4; /* 背景を明るいグレーに */
+            color: #333; /* 文字色を濃いグレー（黒に近い色）に */
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
         }
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: #fff; /* コンテナの背景を真っ白に */
+            padding: 40px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 影を優しく */
+            border-top: 4px solid #e74c3c;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-        }
-        input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-            width: 80%;
-            max-width: 300px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #2c3e50;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-        button:hover {
-            background-color: #1a252f;
-        }
-        #error-msg {
+        h2 {
             color: #e74c3c;
-            margin-top: 10px;
+            font-size: 1.4em;
+            border-bottom: 1px solid #eee; /* 枠線を薄く */
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .overview-box {
+            background: #f9f9f9; /* ボックスの背景をほんのりグレーに */
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd; /* 枠線を追加して見やすく */
+        }
+        .overview-box p {
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #d35400; /* 白背景で見やすい濃いオレンジに */
             font-weight: bold;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        .rule-title {
+            color: #2980b9; /* 白背景で見やすい濃いブルーに */
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .warning-title {
+            color: #c0392b; /* 白背景で見やすい濃いレッドに */
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .action-area {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .action-area p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .start-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .start-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+        }
+        
+        /* スマホ向けの微調整 */
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h2 { font-size: 1.2em; }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h2>最初の謎</h2>
-        <p>ロビー内の情報と画像を組み合わせて、答えを導き出せ。</p>
-        <p>画像が見づらい場合は、画像を右クリックして新しいタブで開こう！</p>
+        <h2>【ゲーム概要】</h2>
+        <div class="overview-box">
+            <p><strong>推定クリア時間：</strong> 約1時間半<br>
+            <span style="font-size: 0.9em; color: #666;">（お時間に余裕がある時に、ゆっくりと腰を据えて挑戦することをおすすめします）</span></p>
+            
+            <p><strong>スタート地点：</strong> サーバーの「<span class="highlight">ロビー</span>」<br>
+            <span style="font-size: 0.9em; color: #666;">（必ずロビーにログインした状態で、謎解きを開始してください）</span></p>
+            
+            <p><strong>問題数：</strong> 5問</p>
+            <p><strong>推奨プレイ人数：</strong> 1人</p>
+        </div>
 
-        <img src="image1.png" alt="謎1の画像1">
-        <img src="image2.png" alt="謎1の画像2">
+        <h2>【参加にあたってのルールと注意事項】</h2>
+        <p>プレイ中は、以下のルールを必ずお守りください。</p>
+        
+        <ol>
+            <li>
+                <span class="rule-title">ブロックの破壊・設置は不要です</span>
+                この謎解きにおいて、ブロックを壊したり置いたりする場面は一切ありません。また、チェスト等からアイテムを「取り出す（持ち帰る）」必要もありません。すべて「見るだけ」で完結します。
+            </li>
+            <li>
+                <span class="rule-title">持ち物は「食料」だけでOKです</span>
+                特別なツールや装備は必要ありません。広大なマップを歩き回るため、満腹度を回復するための食料だけをインベントリに入れて出発してください。
+            </li>
+            <li>
+                <span class="warning-title">取り返しのつかない要素に注意</span>
+                このゲームには、一度選択を誤ると「クリア不可能（ゲームオーバー）」になる仕掛けが存在します。謎を解く際や、答えを入力する際は、本当にそれで合っているか慎重に考えてから行動してください。
+            </li>
+            <li>
+                <span class="warning-title">【重要】ネタバレの禁止</span>
+                他のプレイヤーの楽しみを奪わないため、ゲームの答えやギミックの核心、目的地の座標などをSNSやゲーム内全体チャット（Discord含む）に書き込むことは固く禁じます。クリアした感想などは大丈夫です。
+            </li>
+            <li>
+                <span class="rule-title">生活鯖についての知識が多少必要です</span>
+                この謎解きはサーバーの景観を利用しているため、建築物など「生活鯖での知識」が謎を解く手がかりになる場面があります。もし行き詰まったら、普段のサーバーでの記憶を頼りにするか、改めて街中をよく観察してみてください。
+            </li>
+        </ol>
 
-        <p>出てきた文を入力して次の問題に進め</p>
-
-        <div>
-            <input type="text" id="answer" placeholder="答えを入力">
-            <br>
-            <button onclick="checkAnswer()">解答する</button>
-            <div id="error-msg"></div>
+        <div class="action-area">
+            <p>以上すべてをしっかりと読んだ後に、<br><strong>ロビーにいる状態</strong>で次のページに進み、謎解きを開始してください。</p>
+            <a href="page1.html" class="start-btn">謎解きを開始する</a>
         </div>
     </div>
 
-    <script>
-        function checkAnswer() {
-            // 入力された文字を取得（前後の空白を消去）
-            let input = document.getElementById("answer").value.trim();
-            let errorMsg = document.getElementById("error-msg");
-
-            // ★ココを書き換える：正解のキーワードを設定してください★
-            const correctAnswer = "ララポイケ";
-
-            if (input === correctAnswer) {
-                // 正解の場合、page2.html へ遷移する
-                window.location.href = "page2.html";
-            } else {
-                // 不正解の場合
-                errorMsg.innerText = "答えが違います。もう一度考えてみましょう。";
-            }
-        }
-    </script>
 </body>
 </html>
